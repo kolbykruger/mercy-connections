@@ -3,11 +3,11 @@
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    
+
     &:hover a,
     &:focus-within a {
         opacity: 0.5;
-    }  
+    }
 
     a {
         display: flex;
@@ -17,7 +17,7 @@
         height: 2em;
         padding: 0.25em;
         margin: 0.25em;
-        color: $color-1;
+        color: #fff;
         transition: 150ms ease;
         text-decoration: none;
 

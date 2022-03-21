@@ -774,6 +774,24 @@ blockquote::after {
 
 address {
   font-style: normal;
+  font-size: 18px;
+  font-size: 1.125rem;
+  margin: 0 0 1em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+address {
+  font-size: 1rem;
+}
+@media screen and (min-width: 38rem) {
+  address {
+    font-size: calc(1rem + 0.25 * ((100vw - 38rem) / 32));
+  }
+}
+@media screen and (min-width: 70rem) {
+  address {
+    font-size: 1.25rem;
+  }
 }
 
 img {
@@ -1672,7 +1690,7 @@ body.menu-open .mobile_nav {
 }
 .footer-logo img {
   width: 100%;
-  max-width: 220px;
+  max-width: 260px;
 }
 .footer-nav {
   -webkit-box-flex: 4;
@@ -1698,17 +1716,28 @@ body.menu-open .mobile_nav {
           flex: 25%;
   padding-right: 20px;
 }
-.footer-section h3, .footer-section .menu a:not(.button), .menu .footer-section a:not(.button) {
-  font-size: 1.25rem;
-}
 .footer-section a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1.25rem;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 600;
+  margin-bottom: 0.5em;
 }
 .footer-section a:hover, .footer-section a:focus {
   color: #49c5b1;
+}
+.footer .phone {
+  margin-top: 2em;
+}
+.footer .phone a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer address {
+  margin-top: 1em;
 }
 .footer-copyright {
   display: -webkit-box;
@@ -2001,7 +2030,7 @@ body.menu-open .mobile_nav {
   height: 2em;
   padding: 0.25em;
   margin: 0.25em;
-  color: #008675;
+  color: #fff;
   -webkit-transition: 150ms ease;
   transition: 150ms ease;
   text-decoration: none;
@@ -3167,6 +3196,8 @@ table td {
 }
 .stories .flickity-page-dots {
   bottom: 1em;
+  left: 0;
+  right: 0;
 }
 .stories .flickity-page-dots .dot {
   width: 100%;
