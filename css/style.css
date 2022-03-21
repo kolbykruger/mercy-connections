@@ -1354,8 +1354,8 @@ body.menu-open .header .logo {
 .menu ul.menu-images li.active {
   z-index: 2;
   max-height: 100%;
-  -webkit-animation: reveal-image 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
-          animation: reveal-image 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  -webkit-animation: reveal-image 0.35s forwards;
+          animation: reveal-image 0.35s forwards;
 }
 .menu ul.menu-images li img {
   width: 100%;
@@ -1445,26 +1445,26 @@ body.menu-open .header .logo {
 @-webkit-keyframes reveal-image {
   from {
     opacity: 0;
-    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   to {
     opacity: 1;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes reveal-image {
   from {
     opacity: 0;
-    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   to {
     opacity: 1;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 .mobile_nav {

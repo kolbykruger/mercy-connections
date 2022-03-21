@@ -132,7 +132,7 @@
             &.active {
                 z-index: 2;
                 max-height: 100%;
-                animation: reveal-image 0.35s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+                animation: reveal-image 0.35s forwards;
             }
 
             img {
@@ -222,10 +222,10 @@
 @keyframes reveal-image {
     from {
         opacity: 0;
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        transform: scale(0.8);
     }
     to {
         opacity: 1;
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        transform: scale(1);
     }
 }
