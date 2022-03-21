@@ -1,19 +1,28 @@
 .header {
-
     .container {
         position: relative;
-        max-width: $container-width;
         width: 100%;
+        padding: 4em 1em 1em;
+        z-index: 500;
+
+        body:not(#home) & {
+            border-bottom: 1px solid darken($color-grey-2, 5%);
+        }
     }
 
     .group {
-        justify-content: space-between;
         align-items: flex-end;
     }
 
     .logo {
-        width:100%;
-        max-width: 240px;
+        width: 100%;
+        max-width: 220px;
+        margin-bottom: 0.7em;
+
+        // Possibility to shift logo to white when menu is open
+        body.menu-open & {
+            filter: contrast(0) brightness(55);
+        }
 
         a {
             display: block;
@@ -79,5 +88,4 @@
             height: 100%;
         }
     }
-
 }

@@ -1,0 +1,32 @@
+.updates {
+    margin-bottom: 0;
+
+    .container {
+    }
+
+    .group {
+    }
+
+    &-section {
+        flex: 1;
+        background: $color-2;
+        padding: 3em;
+
+        &:last-of-type {
+            background: $color-3;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+
+    .buttons {
+        margin-top: 2em;
+    }
+}

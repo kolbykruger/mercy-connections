@@ -1,24 +1,28 @@
 //Colors
-$color-0: #000;
-$color-1: #ef4538;
-$color-2: blue;
-$color-3: green;
+$color-0: #002621;
+$color-1: #008675;
+$color-2: #00af66;
+$color-3: #49c5b1;
+$color-s1: #840b55;
+$color-s2: #ffc658;
+$color-s3: #addc91;
 
-$color-grey-1: #f1f2f3;
-$color-grey-2: #f8f8f8;
+$color-grey-1: #ebf6f4;
+$color-grey-2: darken(#ebf6f4, 5%);
 $color-grey-3: #424242;
 
 //Fonts
-$font-0: "Open Sans", sans-serif;
-$font-1: "Open Sans", sans-serif;
+$font-0: 'Vollkorn', serif;
+$font-1: 'Arimo', sans-serif;
+$font-2: 'Permanent Marker', cursive;
 
 //Box Shadow
-$box-shadow-1: 0 2px 4px 0 rgba(50,50,93,.1);
-$box-shadow-2: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-$box-shadow-3: 0 7px 14px rgba(50,50,93,.11), 0 3px 6px rgba(0,0,0,.08);
+$box-shadow-1: 0 2px 4px 0 rgba(#002621, 0.1);
+$box-shadow-2: 0 4px 6px rgba(#002621, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+$box-shadow-3: 0 7px 14px rgba(#002621, 0.11), 0 3px 6px rgba(0, 0, 0, 0.08);
 
 //Transitions
-$transition-1: 250ms ease;
+$transition-1: 185ms ease-in-out;
 
 //Sizing
-$container-width: 1200px; //Sizing of the section .container as well as .column containers
+$container-width: 100em; //Sizing of the section .container as well as .column containers

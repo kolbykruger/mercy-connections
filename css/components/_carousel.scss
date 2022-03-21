@@ -1,66 +1,153 @@
 .carousel {
+    margin-bottom: 0;
     user-select: none;
 
     .container {
-        padding: 0;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .group {
-
+        position: relative;
     }
 
-    .flickity-viewport {
-        width: 100%;
+    .details,
+    .images {
+        position: static;
+        flex: 1;
+    }
+
+    .details {
+        border-radius: 0.25em 0 0 0.25em;
+        overflow: hidden;
+        .slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    }
+
+    .images {
+        order: 1;
+        border-radius: 0 0.25em 0.25em 0;
+        overflow: hidden;
+
+        .slide {
+            aspect-ratio: 1;
+
+            &.is-selected {
+                img {
+                    transform: scale(1);
+                }
+            }
+        }
     }
 
     .slide {
-        user-select: none;
         width: 100%;
-        position: relative;
-        outline: none;
+        opacity: 0;
+        transition: opacity 1s ease-out;
 
-        a {
-            user-select: none;
-            text-decoration: none;
-        }
-
-        img {
-            user-select: none;
-            width: 100%;
-            height: auto;
+        &.is-selected {
+            opacity: 1;
+            transition: opacity 0s ease;
         }
 
         .info {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            color: #fff;
+            max-width: 42em;
             padding: 2em;
-            text-align: center;
+
+            .title {
+                max-width: 90%;
+            }
+
+            .description {
+                margin: 2em 0;
+            }
+
+            .buttons {
+                //margin-top: 2em;
+            }
         }
 
-        .title {
-            margin: 0;
-            @include fluid('font-size', 1.75rem, 3rem);
-            font-weight: 600;
+        figure {
+            width: 100%;
+            height: 100%;
         }
 
-        .description {
-            @include fluid('font-size', 1rem, 1.75rem);
-            font-weight: 500;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(0.8);
+            transition: transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
-        .button {
-            margin: 0.5em 0;
+        &:nth-of-type(1) {
+            background: $color-1;
+            color: #fff;
+        }
+        &:nth-of-type(2) {
+            background: $color-2;
+        }
+        &:nth-of-type(3) {
+            background: $color-3;
         }
     }
-    @media (max-width: 900px) {
 
+    .flickity {
+        &-enabled {
+            padding-bottom: 1em;
+        }
+
+        &-viewport,
+        &-slider {
+            width: 100%;
+        }
+
+        &-viewport {
+            min-height: 720px;
+        }
+
+        &-page-dots {
+            bottom: 1em;
+
+            .dot {
+                width: 100%;
+                max-width: 10px;
+                margin: 0 0.25em;
+                border-radius: 2em;
+                background: $color-0;
+                opacity: 0.75;
+                transition: $transition-1;
+
+                &.is-selected {
+                    max-width: 22px;
+                    background: $color-s2;
+                    box-shadow: $box-shadow-1;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-button {
+            &.previous {
+                left: auto;
+                right: calc(100% + 1.5em);
+            }
+
+            &.next {
+                right: auto;
+                left: calc(100% + 1.5em);
+            }
+
+            opacity: 0.25;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
     }
-
-    @media (max-width: 600px) {
-
-    }
-
 }

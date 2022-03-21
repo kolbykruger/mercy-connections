@@ -20,13 +20,12 @@ $button-background: $color-1;
     &-right {
         justify-content: flex-end;
     }
-
 }
 
 // Reset styles for all buttons
 .button {
     cursor: pointer;
-    font-family: inherit;
+    font-family: $font-1;
     font-size: inherit;
     line-height: inherit;
     color: $button-color;
@@ -40,11 +39,13 @@ $button-background: $color-1;
     display: inline-flex;
     align-items: center;
     margin: 0;
-    padding: 0.75em 1em;
+    padding: 1em 1.375em;
     background: $button-background;
     color: $button-color;
-    border-radius: 0.25em;
+    border-radius: 0.5em;
+    box-shadow: 0 0.625em 1.25em rgba($color-1, 0.09);
     line-height: 1;
+    font-weight: 600;
     transition: 150ms ease;
     text-decoration: none;
     user-select: none;
@@ -75,33 +76,33 @@ $button-background: $color-1;
     }
 
     // Unique styles
-    &-reverse {
-        background: #fff;
-        color: $button-background;
-
-        &:hover,
-        &:focus {
-            background: #fff;
-        }
+    &-primary-2 {
+        background: $color-2;
     }
-    &-ghost {
-        background: transparent;
-        color: $button-background;
-        border: 1px solid $button-background;
-
-        &:hover,
-        &:focus {
-            background: transparent;
-            box-shadow: none;
-            color: $color-2;
-            border-color: $color-2
-        }
+    &-primary-3 {
+        background: $color-3;
     }
-    
+    &-secondary-1 {
+        background: $color-s1;
+        color: #fff;
+    }
+    &-secondary-2 {
+        color: $color-0;
+        background: $color-s2;
+    }
+    &-secondary-3 {
+        color: $color-0;
+        background: $color-s3;
+    }
+
+    &-size-small {
+        padding: 0.66em 1em;
+    }
+
     &[disabled] {
         background: $color-grey-1;
         color: $color-0;
-        cursor:default;
+        cursor: default;
 
         &:hover,
         &:focus {
@@ -111,7 +112,7 @@ $button-background: $color-1;
 
     @media (max-width: 768px) {
         &,
-        + &{
+        + & {
             margin: 0 1em 1em 0;
         }
     }

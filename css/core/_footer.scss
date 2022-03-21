@@ -4,7 +4,6 @@
     margin: 1em 0 0;
 
     .container {
-
     }
 
     .group {
@@ -24,13 +23,13 @@
     &-nav {
         flex: 4;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-between;
         align-items: flex-start;
     }
 
     &-section {
-        flex: 1;
+        flex: 25%;
         padding-right: 20px;
 
         h3 {
@@ -43,7 +42,6 @@
         padding: 0;
 
         li {
-
         }
 
         a {
@@ -70,7 +68,7 @@
 
     .ewd {
         width: 200px;
-        line-height:1;
+        line-height: 1;
 
         img {
             width: 100%;

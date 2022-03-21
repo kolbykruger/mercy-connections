@@ -1,0 +1,12 @@
+.impression {
+    .container {
+    }
+
+    .group {
+    }
+
+    &-image,
+    &-statistics {
+        flex: 1;
+    }
+}

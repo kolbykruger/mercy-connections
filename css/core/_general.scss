@@ -45,8 +45,8 @@ body {
 }
 
 p {
-    @include fs(16px);
-    @include fluid('font-size', 1rem, 1.125rem);
+    @include fs(18px);
+    @include fluid('font-size', 1rem, 1.25rem);
     margin: 0 0 1em;
     font-weight: 400;
     line-height: 1.6;
@@ -83,15 +83,17 @@ h3 {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+    font-family: $font-1;
     margin: 0 0 0.25em;
     width: 100%;
 }
 
 ol,
 ul {
-    @include fs(16px);
-    @include fluid('font-size', 1rem, 1.125rem);
+    @include fs(18px);
+    @include fluid('font-size', 1rem, 1.25rem);
     padding: 0 0 1.5em 2em;
     line-height: 1.6;
     overflow: hidden;
