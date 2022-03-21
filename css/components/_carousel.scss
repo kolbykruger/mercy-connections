@@ -4,11 +4,12 @@
 
     .container {
         padding-top: 0;
-        padding-bottom: 0;
+        // padding-bottom: 0;
     }
 
     .group {
         position: relative;
+        background: $color-grey-2;
     }
 
     .details,
@@ -20,11 +21,18 @@
     .details {
         border-radius: 0.25em 0 0 0.25em;
         overflow: hidden;
+
         .slide {
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100%;
+            transform: scale(0.8);
+            transition: transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 1s ease-out;
+
+            &.is-selected {
+                transform: scale(1);
+            }
         }
     }
 
@@ -98,7 +106,7 @@
 
     .flickity {
         &-enabled {
-            padding-bottom: 1em;
+            // padding-bottom: 1em;
         }
 
         &-viewport,

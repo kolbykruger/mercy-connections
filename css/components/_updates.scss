@@ -9,11 +9,11 @@
 
     &-section {
         flex: 1;
-        background: $color-2;
+        background: $color-s2;
         padding: 3em;
 
-        &:last-of-type {
-            background: $color-3;
+        &:first-of-type {
+            border-right: 1px solid #fff;
         }
 
         .icon {
