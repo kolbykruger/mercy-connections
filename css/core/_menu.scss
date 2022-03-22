@@ -8,6 +8,7 @@
     transform: translate(0, -150%);
     opacity: 0;
     transition: transform 0.45s cubic-bezier(0.42, 0.39, 0.17, 1), opacity 0.45s cubic-bezier(0.42, 0.39, 0.17, 1);
+    overflow: hidden;
 
     &.open {
         transform: translate(0, 0);
@@ -23,6 +24,7 @@
         padding-top: 10em;
         background: $color-grey-2;
         visibility: hidden;
+        overflow: hidden;
 
         &:nth-of-type(1) {
             background: $color-1;
@@ -83,10 +85,12 @@
     }
 
     .group {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 5vw;
         align-items: start;
+        z-index: 2;
 
         &.group-col-1 {
             grid-template-columns: 1fr;
@@ -206,16 +210,17 @@
     }
 
     .decor {
-        display: none;
-        position: absolute;
+        position: fixed;
         bottom: 0;
-        right: 0;
+        right: -1vw;
         pointer-events: none;
         user-select: none;
-        width: 60vw;
-        height: 90vh;
-        mix-blend-mode: color-burn;
-        z-index: 2;
+        width: 110vw;
+        height: 110vh;
+        mix-blend-mode: soft-light;
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
     }
 }
 

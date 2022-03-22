@@ -56,13 +56,34 @@
         width: 100%;
         opacity: 0;
         transition: opacity 1s ease-out;
+        overflow: hidden;
 
         &.is-selected {
             opacity: 1;
             transition: opacity 0s ease;
         }
 
+        .decor {
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            mix-blend-mode: soft-light;
+            opacity: 0.5;
+            pointer-events: none;
+            user-select: none;
+
+            img {
+                transform: scale(1);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
         .info {
+            position: relative;
             max-width: 42em;
             padding: 2em;
 

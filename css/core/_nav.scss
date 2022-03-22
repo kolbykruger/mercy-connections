@@ -45,8 +45,12 @@
         flex-flow: row wrap;
         align-items: center;
 
-        > li {
+        &:not(.special) > li {
             margin: 0 0 0 1.75em;
+        }
+
+        &.special > li {
+            margin-left: 0.75em;
         }
 
         li:last-child ul {
@@ -81,26 +85,7 @@
     }
 
     a.button {
-        padding: 0;
         height: 42px;
-        background: none;
-
-        span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 0.6em;
-            height: 100%;
-
-            &:first-of-type {
-                background: $color-2;
-                border-radius: 0.5em 0 0 0.5em;
-            }
-            &:last-of-type {
-                background: $color-1;
-                border-radius: 0 0.5em 0.5em 0;
-            }
-        }
 
         &::after {
             display: none;
@@ -110,6 +95,10 @@
         &:focus {
             color: #fff;
         }
+    }
+
+    a.text-button {
+        color: $color-1;
     }
 
     a {
