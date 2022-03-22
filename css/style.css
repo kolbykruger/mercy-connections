@@ -1140,13 +1140,13 @@ body.menu-open .header .logo {
   background: rgba(0, 134, 117, 0.25);
   background: rgba(0, 38, 33, 0.25);
 }
-.nav .trigger a.open {
+.nav .trigger a.open:not(.button) {
   color: #002621;
 }
-.nav .trigger a.open::after {
+.nav .trigger a.open:not(.button)::after {
   max-height: 2px;
 }
-.nav .trigger a.open i {
+.nav .trigger a.open:not(.button) i {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
 }
@@ -2747,6 +2747,7 @@ p.simplesearch-results, figure:not(.fig) figcaption.simplesearch-results,
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: -1;
 }
 .carousel .slide .decor img {
   -webkit-transform: scale(1);
@@ -3163,6 +3164,7 @@ table td {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: -1;
 }
 .hook-item .decor img {
   -webkit-transform: scale(1);
@@ -3360,6 +3362,10 @@ table td {
 
 .updates {
   margin-bottom: 0;
+  overflow: hidden;
+}
+.updates .group {
+  position: relative;
 }
 .updates-section {
   -webkit-box-flex: 1;
@@ -3381,6 +3387,28 @@ table td {
 .updates .buttons {
   margin-top: 2em;
 }
+.updates .decor {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.updates .decor img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .donation {
   margin-bottom: 0;
@@ -3400,7 +3428,9 @@ table td {
   grid-template-columns: repeat(2, 1fr);
 }
 .donation-snippet {
+  position: relative;
   padding: 2em;
+  overflow: hidden;
 }
 .donation-snippet:nth-of-type(1), .donation-snippet:nth-of-type(4), .donation-snippet:nth-of-type(5) {
   color: #002621;
@@ -3473,4 +3503,26 @@ table td {
 }
 .donation-cta .buttons {
   margin-top: 2em;
+}
+.donation .decor {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.donation .decor img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }

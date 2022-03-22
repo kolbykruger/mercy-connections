@@ -73,6 +73,7 @@
             opacity: 0.5;
             pointer-events: none;
             user-select: none;
+            z-index: -1;
 
             img {
                 transform: scale(1);
