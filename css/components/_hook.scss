@@ -1,25 +1,5 @@
 .hook {
     margin-bottom: 0;
-
-    &.section-active {
-        .hook-item {
-            @for $i from 1 through 6 {
-                &:nth-child(#{$i}) {
-                    transition-delay: 0.05s * $i + 0.3s;
-                }
-            }
-            transform: scale(1);
-            opacity: 1;
-
-            .image img {
-                filter: grayscale(0);
-            }
-
-            &:nth-of-type(3) {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            }
-        }
-    }
     .container {
     }
 
@@ -36,9 +16,6 @@
     &-item {
         position: relative;
         aspect-ratio: 3 / 2;
-        transform: scale(0.8);
-        opacity: 0;
-        transition: 0.66s ease;
         overflow: hidden;
 
         display: flex;
@@ -93,19 +70,14 @@
             margin-bottom: 0.5em;
         }
 
-        &:nth-of-type(2) {
-            background: $color-2;
-            color: $color-0;
-        }
-
-        &:nth-of-type(4) {
+        &:nth-of-type(1) {
             aspect-ratio: unset;
             grid-column: span 1;
             background: $color-1;
             color: #fff;
         }
 
-        &:nth-of-type(5) {
+        &:nth-of-type(2) {
             grid-column: span 2;
             aspect-ratio: unset;
             transform: 1;
@@ -114,12 +86,6 @@
             transition: 0.66s ease;
             background: $color-1;
             color: #fff;
-        }
-
-        &:nth-of-type(3) {
-            height: 100%;
-            background: $color-3;
-            color: $color-0;
         }
 
         p.value {

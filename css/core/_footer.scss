@@ -76,13 +76,29 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        margin-top: 3em;
-        padding-top: 2em;
+        margin-top: 1em;
+    }
+
+    .copyright {
+        flex: 1;
+    }
+
+    .socials {
+        flex: 1;
     }
 
     .ewd {
-        width: 200px;
+        flex: 1;
         line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a {
+            display: inline-block;
+            width: 150px;
+            max-width: 150px;
+        }
 
         img {
             width: 100%;

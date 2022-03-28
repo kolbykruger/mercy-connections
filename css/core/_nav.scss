@@ -1,7 +1,8 @@
 .nav {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
+    flex-direction: column;
     flex: 1;
     text-align: center;
     user-select: none;
@@ -45,6 +46,10 @@
         flex-flow: row wrap;
         align-items: center;
 
+        &.special {
+            margin-bottom: 1em;
+        }
+
         &:not(.special) > li {
             margin: 0 0 0 1.75em;
         }
@@ -85,7 +90,7 @@
     }
 
     a.button {
-        height: 42px;
+        height: 36px;
 
         &::after {
             display: none;
@@ -158,33 +163,5 @@
 
     @media (max-width: 900px) {
         display: none;
-    }
-}
-
-.utility-nav {
-    margin-bottom: 0em;
-
-    ul {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        justify-content: flex-end;
-        overflow: visible;
-        padding: 0;
-    }
-
-    li {
-        position: relative;
-        display: block;
-        margin: 0 0 0 2.5em;
-    }
-
-    a {
-        @include fs(18px);
-        display: block;
-        color: $color-0;
-        font-family: $font-1;
-        text-decoration: none;
-        transition: $transition-1;
     }
 }

@@ -655,20 +655,20 @@ h1 {
   }
 }
 
-h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
+h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value, .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
   line-height: 1.2;
   font-weight: 600;
 }
-h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
+h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value, .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
   font-size: 1.75rem;
 }
 @media screen and (min-width: 38rem) {
-  h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
+  h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value, .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
     font-size: calc(1.75rem + 0.75 * ((100vw - 38rem) / 32));
   }
 }
 @media screen and (min-width: 70rem) {
-  h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
+  h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value, .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
     font-size: 2.5rem;
   }
 }
@@ -696,6 +696,9 @@ h2,
 .hook-item p.value,
 .hook-item figure:not(.fig) figcaption.value,
 figure:not(.fig) .hook-item figcaption.value,
+.statistics-item p.value,
+.statistics-item figure:not(.fig) figcaption.value,
+figure:not(.fig) .statistics-item figcaption.value,
 h3,
 .menu a:not(.button),
 h4 {
@@ -903,7 +906,7 @@ hr::before {
 .header .container {
   position: relative;
   width: 100%;
-  padding: 4em 1em 1em;
+  padding: 3em 1em 1.5em;
   z-index: 500;
 }
 body:not(#home) .header .container {
@@ -916,8 +919,7 @@ body:not(#home) .header .container {
 }
 .header .logo {
   width: 100%;
-  max-width: 220px;
-  margin-bottom: 0.7em;
+  max-width: 280px;
 }
 body.menu-open .header .logo {
   -webkit-filter: contrast(0) brightness(55);
@@ -1001,12 +1003,16 @@ body.menu-open .header .logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1060,6 +1066,9 @@ body.menu-open .header .logo {
       -ms-flex-align: center;
           align-items: center;
 }
+.nav > ul.special {
+  margin-bottom: 1em;
+}
 .nav > ul:not(.special) > li {
   margin: 0 0 0 1.75em;
 }
@@ -1090,7 +1099,7 @@ body.menu-open .header .logo {
   font-family: "Arimo", sans-serif;
 }
 .nav a.button {
-  height: 42px;
+  height: 36px;
 }
 .nav a.button::after {
   display: none;
@@ -1154,42 +1163,6 @@ body.menu-open .header .logo {
   .nav {
     display: none;
   }
-}
-
-.utility-nav {
-  margin-bottom: 0em;
-}
-.utility-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  overflow: visible;
-  padding: 0;
-}
-.utility-nav li {
-  position: relative;
-  display: block;
-  margin: 0 0 0 2.5em;
-}
-.utility-nav a {
-  font-size: 18px;
-  font-size: 1.125rem;
-  display: block;
-  color: #002621;
-  font-family: "Arimo", sans-serif;
-  text-decoration: none;
-  -webkit-transition: 185ms ease-in-out;
-  transition: 185ms ease-in-out;
 }
 
 .menu {
@@ -1733,12 +1706,37 @@ body.menu-open .mobile_nav {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  margin-top: 3em;
-  padding-top: 2em;
+  margin-top: 1em;
+}
+.footer .copyright {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.footer .socials {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .footer .ewd {
-  width: 200px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.footer .ewd a {
+  display: inline-block;
+  width: 150px;
+  max-width: 150px;
 }
 .footer .ewd img {
   width: 100%;
@@ -1968,6 +1966,10 @@ body.menu-open .mobile_nav {
 }
 .button-size-small {
   padding: 0.66em 1em;
+}
+.button-size-xs {
+  height: 36px;
+  padding: 0 0.66em;
 }
 .button[disabled] {
   background: #ebf6f4;
@@ -3064,45 +3066,110 @@ table td {
           flex: 1;
 }
 
-.hook {
+.statistics {
   margin-bottom: 0;
 }
-.hook.section-active .hook-item {
+.statistics-item {
+  position: relative;
+  aspect-ratio: 3/2;
+  overflow: hidden;
+  width: 33.333%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+  color: #002621;
+  background: #ffc658;
+  padding: 3em;
+  text-decoration: none;
+}
+.statistics-item .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+.statistics-item h2, .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
+  margin-bottom: 0.5em;
+}
+.statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
+  font-family: "Arimo", sans-serif;
+  font-weight: 600;
+}
+.statistics-item:nth-of-type(3n + 2) {
+  background: #00af66;
+  color: #002621;
+}
+.statistics-item:nth-of-type(3n + 3) {
+  background: #49c5b1;
+  color: #002621;
+}
+.statistics .decor {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.statistics .decor img {
   -webkit-transform: scale(1);
           transform: scale(1);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.statistics .flickity-viewport, .statistics .flickity-slider {
+  width: 100%;
+}
+.statistics .flickity-viewport {
+  min-height: 350px;
+}
+.statistics .flickity-page-dots {
+  bottom: 1em;
+}
+.statistics .flickity-page-dots .dot {
+  width: 100%;
+  max-width: 10px;
+  margin: 0 0.25em;
+  border-radius: 2em;
+  background: #002621;
+  opacity: 0.75;
+  -webkit-transition: 185ms ease-in-out;
+  transition: 185ms ease-in-out;
+}
+.statistics .flickity-page-dots .dot.is-selected {
+  max-width: 22px;
+  background: #ffc658;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 38, 33, 0.1);
+          box-shadow: 0 2px 4px 0 rgba(0, 38, 33, 0.1);
   opacity: 1;
 }
-.hook.section-active .hook-item:nth-child(1) {
-  -webkit-transition-delay: 0.35s;
-          transition-delay: 0.35s;
+.statistics .flickity-button {
+  opacity: 0.25;
 }
-.hook.section-active .hook-item:nth-child(2) {
-  -webkit-transition-delay: 0.4s;
-          transition-delay: 0.4s;
+.statistics .flickity-button.previous {
+  left: auto;
+  right: calc(100% + 1.5em);
 }
-.hook.section-active .hook-item:nth-child(3) {
-  -webkit-transition-delay: 0.45s;
-          transition-delay: 0.45s;
+.statistics .flickity-button.next {
+  right: auto;
+  left: calc(100% + 1.5em);
 }
-.hook.section-active .hook-item:nth-child(4) {
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+.statistics .flickity-button:hover, .statistics .flickity-button:focus {
+  opacity: 1;
 }
-.hook.section-active .hook-item:nth-child(5) {
-  -webkit-transition-delay: 0.55s;
-          transition-delay: 0.55s;
-}
-.hook.section-active .hook-item:nth-child(6) {
-  -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
-}
-.hook.section-active .hook-item .image img {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-.hook.section-active .hook-item:nth-of-type(3) {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+.hook {
+  margin-bottom: 0;
 }
 .hook .group {
   display: -ms-grid;
@@ -3120,11 +3187,6 @@ table td {
 .hook-item {
   position: relative;
   aspect-ratio: 3/2;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  opacity: 0;
-  -webkit-transition: 0.66s ease;
-  transition: 0.66s ease;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3181,18 +3243,14 @@ table td {
 .hook-item h2, .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
   margin-bottom: 0.5em;
 }
-.hook-item:nth-of-type(2) {
-  background: #00af66;
-  color: #002621;
-}
-.hook-item:nth-of-type(4) {
+.hook-item:nth-of-type(1) {
   aspect-ratio: unset;
   -ms-grid-column-span: 1;
   grid-column: span 1;
   background: #008675;
   color: #fff;
 }
-.hook-item:nth-of-type(5) {
+.hook-item:nth-of-type(2) {
   -ms-grid-column-span: 2;
   grid-column: span 2;
   aspect-ratio: unset;
@@ -3203,11 +3261,6 @@ table td {
   transition: 0.66s ease;
   background: #008675;
   color: #fff;
-}
-.hook-item:nth-of-type(3) {
-  height: 100%;
-  background: #49c5b1;
-  color: #002621;
 }
 .hook-item p.value, .hook-item figure:not(.fig) figcaption.value, figure:not(.fig) .hook-item figcaption.value {
   font-family: "Arimo", sans-serif;
@@ -3381,7 +3434,7 @@ table td {
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
-.updates-section h2, .updates-section .hook-item p.value, .hook-item .updates-section p.value, .updates-section .hook-item figure:not(.fig) figcaption.value, .hook-item figure:not(.fig) .updates-section figcaption.value, .updates-section figure:not(.fig) .hook-item figcaption.value, figure:not(.fig) .hook-item .updates-section figcaption.value {
+.updates-section h2, .updates-section .statistics-item p.value, .statistics-item .updates-section p.value, .updates-section .statistics-item figure:not(.fig) figcaption.value, .statistics-item figure:not(.fig) .updates-section figcaption.value, .updates-section figure:not(.fig) .statistics-item figcaption.value, figure:not(.fig) .statistics-item .updates-section figcaption.value, .updates-section .hook-item p.value, .hook-item .updates-section p.value, .updates-section .hook-item figure:not(.fig) figcaption.value, .hook-item figure:not(.fig) .updates-section figcaption.value, .updates-section figure:not(.fig) .hook-item figcaption.value, figure:not(.fig) .hook-item .updates-section figcaption.value {
   margin-bottom: 1em;
 }
 .updates .buttons {
@@ -3460,9 +3513,6 @@ table td {
           flex: 1;
 }
 .donation-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -3474,7 +3524,7 @@ table td {
 .donation-image img {
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0.4;
+  opacity: 0.75;
 }
 .donation-cta {
   padding: 2em;
@@ -3493,8 +3543,10 @@ table td {
           flex-flow: column nowrap;
   text-align: center;
   z-index: 2;
+  background: #008675;
+  color: #fff;
 }
-.donation-cta h2, .donation-cta .hook-item p.value, .hook-item .donation-cta p.value, .donation-cta .hook-item figure:not(.fig) figcaption.value, .hook-item figure:not(.fig) .donation-cta figcaption.value, .donation-cta figure:not(.fig) .hook-item figcaption.value, figure:not(.fig) .hook-item .donation-cta figcaption.value {
+.donation-cta h2, .donation-cta .statistics-item p.value, .statistics-item .donation-cta p.value, .donation-cta .statistics-item figure:not(.fig) figcaption.value, .statistics-item figure:not(.fig) .donation-cta figcaption.value, .donation-cta figure:not(.fig) .statistics-item figcaption.value, figure:not(.fig) .statistics-item .donation-cta figcaption.value, .donation-cta .hook-item p.value, .hook-item .donation-cta p.value, .donation-cta .hook-item figure:not(.fig) figcaption.value, .hook-item figure:not(.fig) .donation-cta figcaption.value, .donation-cta figure:not(.fig) .hook-item figcaption.value, figure:not(.fig) .hook-item .donation-cta figcaption.value {
   max-width: 12em;
 }
 .donation-cta p, .donation-cta figure:not(.fig) figcaption, figure:not(.fig) .donation-cta figcaption {

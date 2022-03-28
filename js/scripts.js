@@ -135,6 +135,19 @@ $('.stories .container').flickity({
     friction: 0.2,
 })
 
+$('.statistics .group').flickity({
+    cellSelector: '.statistics-item',
+    wrapAround: true,
+    adaptiveHeight: false,
+    cellAlign: 'center',
+    prevNextButtons: true,
+    pageDots: false,
+    imagesLoaded: true,
+    autoPlay: 5000,
+    selectedAttraction: 0.01,
+    friction: 0.2,
+})
+
 //Universal Tables
 $('table').wrap("<div class='universal-table'></div>")
 

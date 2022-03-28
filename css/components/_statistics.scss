@@ -1,0 +1,125 @@
+.statistics {
+    margin-bottom: 0;
+
+    .container {
+    }
+
+    .group {
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        // place-content: center;
+    }
+
+    &-item {
+        position: relative;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        width: 33.333%;
+        display: flex;
+        align-items: flex-start;
+        height: 100%;
+        color: $color-0;
+        background: $color-s2;
+        padding: 3em;
+        text-decoration: none;
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            margin-bottom: 0.5em;
+        }
+
+        p.value {
+            font-family: $font-1;
+            font-weight: 600;
+            @extend h2;
+        }
+
+        &:nth-of-type(3n + 2) {
+            background: #00af66;
+            color: #002621;
+        }
+
+        &:nth-of-type(3n + 3) {
+            background: #49c5b1;
+            color: #002621;
+        }
+    }
+
+    .decor {
+        position: absolute;
+        top: -5%;
+        left: -5%;
+        width: 110%;
+        height: 110%;
+        mix-blend-mode: soft-light;
+        opacity: 0.5;
+        pointer-events: none;
+        user-select: none;
+
+        img {
+            transform: scale(1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .flickity {
+        &-enabled {
+            // padding-bottom: 1em;
+        }
+
+        &-viewport,
+        &-slider {
+            width: 100%;
+        }
+
+        &-viewport {
+            min-height: 350px;
+        }
+
+        &-page-dots {
+            bottom: 1em;
+
+            .dot {
+                width: 100%;
+                max-width: 10px;
+                margin: 0 0.25em;
+                border-radius: 2em;
+                background: $color-0;
+                opacity: 0.75;
+                transition: $transition-1;
+
+                &.is-selected {
+                    max-width: 22px;
+                    background: $color-s2;
+                    box-shadow: $box-shadow-1;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-button {
+            &.previous {
+                left: auto;
+                right: calc(100% + 1.5em);
+            }
+
+            &.next {
+                right: auto;
+                left: calc(100% + 1.5em);
+            }
+
+            opacity: 0.25;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+}
