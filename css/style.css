@@ -3182,12 +3182,6 @@ table td {
   grid-template-columns: repeat(3, 1fr);
   place-content: center;
 }
-@media (max-width: 1920px) {
-  .hook .group {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 .hook-item {
   position: relative;
   aspect-ratio: 3/2;
