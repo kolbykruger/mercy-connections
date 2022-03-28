@@ -7,10 +7,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         place-content: center;
-
-        @media (max-width: 1920px) {
-            grid-template-columns: repeat(2, 1fr);
-        }
     }
 
     &-item {
