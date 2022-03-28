@@ -2045,6 +2045,10 @@ body.menu-open .mobile_nav {
   margin: 0 0 1em;
   text-align: center;
 }
+.instagram .heading a {
+  text-decoration: none;
+  color: #002621;
+}
 
 .contact-info .section {
   margin-bottom: 2rem;
