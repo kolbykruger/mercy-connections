@@ -1,12 +1,21 @@
 .header {
+    padding-top: 1.5em;
+    border-top: 8px solid $color-2;
+    // background: #fff;
+
     .container {
         position: relative;
         width: 100%;
-        padding: 3em 1em 1.5em;
-        z-index: 500;
+        padding: 3em 270px 2em;
 
-        body:not(#home) & {
-            border-bottom: 1px solid darken($color-grey-2, 5%);
+        @media (max-width: 1920px) {
+            padding: 5em 120px 2em;
+        }
+        @media (max-width: 1500px) {
+            padding: 5vh 60px;
+        }
+        @media (max-width: 1200px) {
+            padding: 2vh 1.5em;
         }
     }
 
@@ -16,12 +25,8 @@
 
     .logo {
         width: 100%;
-        max-width: 280px;
-
-        // Possibility to shift logo to white when menu is open
-        body.menu-open & {
-            filter: contrast(0) brightness(55);
-        }
+        max-width: 380px;
+        max-width: minmax(240px, 300px);
 
         a {
             display: block;

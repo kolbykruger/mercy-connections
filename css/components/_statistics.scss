@@ -19,7 +19,6 @@
         align-items: flex-start;
         height: 100%;
         color: $color-0;
-        background: $color-s2;
         padding: 3em;
         text-decoration: none;
 
@@ -36,16 +35,6 @@
             font-family: $font-1;
             font-weight: 600;
             @extend h2;
-        }
-
-        &:nth-of-type(3n + 2) {
-            background: #00af66;
-            color: #002621;
-        }
-
-        &:nth-of-type(3n + 3) {
-            background: #49c5b1;
-            color: #002621;
         }
     }
 

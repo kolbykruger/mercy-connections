@@ -75,40 +75,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
-//Flickity Carousel
-$('.carousel .group .images').flickity({
+$('.carousel .group').flickity({
     cellSelector: '.slide',
     wrapAround: true,
     adaptiveHeight: false,
     cellAlign: 'center',
     prevNextButtons: false,
-    pageDots: false,
-    imagesLoaded: true,
-    autoPlay: false,
-    selectedAttraction: 0.01,
-    friction: 0.2,
-    asNavFor: '.carousel .group .details',
-    contain: true,
-    draggable: false,
-})
-
-let isDraggable = window.matchMedia('(max-width: 968px)').matches
-window.addEventListener('resize', function () {
-    isDraggable = window.matchMedia('(max-width: 968px)').matches
-})
-
-$('.carousel .group .details').flickity({
-    cellSelector: '.slide',
-    wrapAround: true,
-    adaptiveHeight: false,
-    cellAlign: 'center',
-    prevNextButtons: true,
     pageDots: true,
     imagesLoaded: true,
-    autoPlay: false,
     selectedAttraction: 0.01,
     friction: 0.2,
-    draggable: isDraggable,
 })
 
 $('.slideshow .container').flickity({

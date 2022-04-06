@@ -19,7 +19,8 @@
     <script src="https://kit.fontawesome.com/1c0794db94.js" crossorigin="anonymous"></script>
 
     <!-- External Styles -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css">
 
     <!-- Internal Styles -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -31,32 +32,67 @@
     <header class="header" role="banner">
         <div class="container">
             <div class="group">
-
                 <div class="logo">
                     <a href="index.html" class="force">
-                        <img src="https://eternityatom.com/images/atom_logo.svg" title="Return Home" alt="Logo">
+                        <img src="images/v4.svg" title="Return Home" alt="Logo" />
                     </a>
                 </div>
 
                 <nav class="nav" role="navigation" aria-label="Site Menu">
-
                     <ul>
-                        <li><a href="#">Link</a></li>
-                        <li class="trigger"><a href="#">Link <i class="fal fa-caret-down" aria-hidden="true"></i></a>
+                        <li class="trigger">
+                            <a href="#">About <i class="far fa-angle-down" aria-hidden="true"></i></a>
                             <ul class="drop">
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Mission & Vision</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Staff</a></li>
+                                <li><a href="#">Board of Directors</a></li>
+                                <li><a href="#">Employment</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Link</a></li>
                         <li class="trigger">
-                            <a href="#">Link  <i class="fal fa-caret-down" aria-hidden="true"></i></a>
+                            <a href="#">Programs <i class="far fa-angle-down" aria-hidden="true"></i></a>
                             <ul class="drop">
-                                <li><a href="#">Drop Link</a></li>
-                                <li><a href="#">Drop Link</a></li>
-                                <li><a href="#">Drop Link</a></li>
+                                <li><a href="#">Academic Tutoring</a></li>
+                                <li><a href="#">U.S. Citizenship Preparation</a></li>
+                                <li><a href="#">English Language Learning</a></li>
+                                <li><a href="#">Small Business & Entrepreneurship</a></li>
+                                <li><a href="#">Mentoring</a></li>
+                                <li><a href="#">Self-development</a></li>
+                                <li><a href="#">Support Groups</a></li>
+                                <li><a href="#">Resources</a></li>
+                                <li><a href="#">Community Lunch</a></li>
+                                <li><a href="#">Program Registration</a></li>
                             </ul>
+                        </li>
+                        <li class="trigger">
+                            <a href="#">Community <i class="far fa-angle-down" aria-hidden="true"></i></a>
+                            <ul class="drop">
+                                <li><a href="#">Our Stories</a></li>
+                                <li><a href="#">Get Involved</a></li>
+                                <li><a href="#">Student Portal</a></li>
+                                <li><a href="#">Business Graduates & Alumni</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">News & Events</a>
+                        </li>
+                        <li>
+                            <a href="#">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="utility">
+                        <li>
+                            <a class="button" data-id="4" href="#">Get Involved</a>
+                        </li>
+                        <li>
+                            <a class="button button-secondary-1" data-id="4" href="#">
+                                <i class="fas fa-heart"></i>
+                                <span>Donate</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -67,78 +103,70 @@
 
     <main role="main">
 
-        <div class="layout layout_sidebar">
-            <div class="col col_1">
-                <section class="richtext">
-                    <div class="container">
-                        <h1>Heading 1</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quia eveniet, eum doloribus pariatur facere debitis! Corporis tenetur, quia saepe accusantium quasi culpa. Ad molestiae, cumque! Minus doloribus nesciunt sit provident deserunt, quisquam, ex, nihil dicta ab molestias ea rerum! Saepe laboriosam ex, earum, dolore aut unde nostrum mollitia necessitatibus id cum perferendis a debitis amet exercitationem hic obcaecati minus!</p>
-                        <h2>Heading 2</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
-                        <h3>Heading 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
-                    </div>
-                </section>
-            </div>
-            <div class="col col_2">
-                <section class="richtext">
-                    <div class="container">
-                        <h3>Sidebar</h3>
-                        <p>Testing the sidebar</p>
-                    </div>
-                </section>
-            </div>
+        <style>
+            p {
+                max-width: 46em;
+            }
+        </style>
+
+        <div class="layout layout_default" style="padding-top: 3em">
+            <section class="richtext">
+                <div class="container">
+                    <h1>Heading 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quia eveniet, eum doloribus
+                        pariatur facere debitis! Corporis tenetur, quia saepe accusantium quasi culpa. Ad molestiae,
+                        cumque! Minus doloribus nesciunt sit provident deserunt, quisquam, ex, nihil dicta ab
+                        molestias ea rerum! Saepe laboriosam ex, earum, dolore aut unde nostrum mollitia
+                        necessitatibus id cum perferendis a debitis amet exercitationem hic obcaecati minus!</p>
+                    <h2>Heading 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                        deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                    <h3>Heading 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                        deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                    <h4>Heading 4</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                </div>
+            </section>
         </div>
 
         <div class="layout layout_two_columns">
             <div class="col col_1">
                 <section class="richtext">
                     <div class="container">
-                        <h2>Item</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h2>Heading 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
                         <br />
-                        <h2>Item</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h3>Heading 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h4>Heading 4</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
                     </div>
                 </section>
             </div>
             <div class="col col_2">
                 <section class="richtext">
                     <div class="container">
-                        <h2>Item</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h2>Heading 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
                         <br />
-                        <h2>Item</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h3>Heading 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
+                        <h4>Heading 4</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore a quam voluptatibus autem
+                            deserunt quasi soluta culpa, qui cupiditate incidunt.</p>
                     </div>
                 </section>
             </div>
         </div>
 
     </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="social-icons">
-                <a href="#" target="_blank" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" title="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank" title="Follow us on Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" target="_blank" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="Follow us on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank" title="Follow us on YouTube"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="address">182 Main Street | Burlington, Vermont 05401</div>
-            <div class="contact">
-                <a href="#">(000) 000-0000</a> | <a href="#">info@eternitymarketing.com</a>
-            </div>
-            <div class="copyright" role="contentinfo">&copy; 2019 *Site Name* | All Rights Reserved</div>
-            <div class="ewd">
-                <a href="https://eternitywebdev.com/" target="_blank">
-                    <img src="images/website_by_eternity.svg" alt="Website By Eternity">
-                </a>
-            </div>
-        </div>
-    </footer>
 
     <!-- External Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

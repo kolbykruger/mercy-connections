@@ -1,20 +1,22 @@
 .nav {
+    flex: 1;
+    font-family: $font-1;
+    font-weight: 700;
+    text-align: center;
+    user-select: none;
+    z-index: 10;
+
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    flex-direction: column;
-    flex: 1;
-    text-align: center;
-    user-select: none;
-    margin-left: 1em;
-    z-index: 10;
+    margin-left: 2.5em;
 
     ul {
         overflow: visible;
         padding: 0;
 
         ul {
-            border-radius: 0.25em;
+            border-radius: 0.125em;
             padding: 0;
             left: 0;
             opacity: 0;
@@ -28,14 +30,19 @@
             transition: opacity 0.35s;
             overflow: hidden;
 
+            &.column-nav {
+                column-count: 2;
+            }
+
             a {
-                @include fs(16px);
+                @include fs(17px);
                 padding: 1em;
                 margin: 0;
 
-                &:hover,
-                &:focus {
-                    background: $color-grey-2;
+                &:not(.button):hover,
+                &:not(.button):focus {
+                    color: $color-2;
+                    background: $color-grey-1;
                 }
             }
         }
@@ -46,16 +53,8 @@
         flex-flow: row wrap;
         align-items: center;
 
-        &.special {
-            margin-bottom: 1em;
-        }
-
-        &:not(.special) > li {
-            margin: 0 0 0 1.75em;
-        }
-
-        &.special > li {
-            margin-left: 0.75em;
+        > li {
+            margin: 0 0 0 1.5vw;
         }
 
         li:last-child ul {
@@ -72,7 +71,6 @@
         &.open {
             > a {
                 color: $color-1;
-                color: $color-0;
             }
 
             ul {
@@ -83,81 +81,38 @@
         }
     }
 
-    a:not(.button) {
-        display: block;
-        color: $color-0;
-        font-family: $font-1;
-    }
-
-    a.button {
-        height: 36px;
-
-        &::after {
-            display: none;
-        }
-
-        &:hover,
-        &:focus {
-            color: #fff;
-        }
-    }
-
-    a.text-button {
-        color: $color-1;
-    }
-
     a {
-        @include fs(17px);
-        font-weight: 600;
+        @include fs(18px);
+        display: block;
         text-decoration: none;
-        line-height: 1;
         transition: $transition-1;
 
-        &:hover,
-        &:focus {
+        &:not(.button) {
+            color: $color-0;
+        }
+
+        &:not(.button):hover,
+        &:not(.button):focus {
             color: $color-1;
         }
 
         i {
-            @include fs(12px);
+            @include fs(14px);
             cursor: pointer;
-            margin: 0 0 0 3px;
-            transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+            margin: 0 0 0 6px;
+            opacity: 0.4;
+        }
+
+        &.button {
+            display: flex;
+            align-items: center;
         }
     }
 
-    .drop {
-        &.column_nav {
-            column-count: 2;
-        }
-    }
+    .utility {
 
-    .trigger {
-        a {
-            &::after {
-                content: '';
-                position: absolute;
-                top: 125%;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                max-height: 0px;
-                border-radius: 2em;
-                background: rgba($color-1, 0.25);
-                background: rgba($color-0, 0.25);
-            }
-
-            &.open:not(.button) {
-                color: $color-0;
-
-                &::after {
-                    max-height: 2px;
-                }
-
-                i {
-                    transform: rotateX(180deg);
-                }
-            }
+        > li {
+            margin: 0 0 0 0.5em;
         }
     }
 
