@@ -1,3 +1,57 @@
+//Impression
+document.addEventListener('DOMContentLoaded', function () {
+    var controller = new ScrollMagic.Controller()
+
+    var tween1 = gsap.to('.impression-images-layer-vector', {
+        rotate: 90,
+        yPercent: -8,
+    })
+    // var tween2 = gsap.to('.impression-images-layer-2', {
+    //     yPercent: 16,
+    // })
+
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#impression',
+        duration: '200%',
+        triggerHook: '1',
+    })
+        .setTween(tween1)
+        .addTo(controller)
+    // var scene2 = new ScrollMagic.Scene({
+    //     triggerElement: '#impression',
+    //     duration: '200%',
+    // })
+    //     .setTween(tween2)
+    //     .addTo(controller)
+})
+
+//Annual Event
+document.addEventListener('DOMContentLoaded', function () {
+    var controller = new ScrollMagic.Controller()
+
+    var tween1 = gsap.to('.annual-event-images-layer-vector', {
+        rotate: -45,
+        scale: 1.1,
+    })
+    // var tween2 = gsap.to('.impression-images-layer-2', {
+    //     yPercent: 16,
+    // })
+
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#annual-event',
+        duration: '200%',
+        triggerHook: '1',
+    })
+        .setTween(tween1)
+        .addTo(controller)
+    // var scene2 = new ScrollMagic.Scene({
+    //     triggerElement: '#impression',
+    //     duration: '200%',
+    // })
+    //     .setTween(tween2)
+    //     .addTo(controller)
+})
+
 //Section Scroll Animations (requires scrollmagic)
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller()
@@ -116,10 +170,11 @@ $('.statistics .group').flickity({
     wrapAround: true,
     adaptiveHeight: false,
     cellAlign: 'center',
+    groupCells: 3,
     prevNextButtons: true,
     pageDots: false,
     imagesLoaded: true,
-    autoPlay: 5000,
+    // autoPlay: 5000,
     selectedAttraction: 0.01,
     friction: 0.2,
 })

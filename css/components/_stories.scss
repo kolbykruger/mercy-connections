@@ -24,7 +24,7 @@
         }
 
         &-viewport {
-            min-height: 720px;
+            min-height: 520px;
             // box-shadow: $box-shadow-3;
             // border-radius: 0.5em;
         }
@@ -127,13 +127,8 @@
             padding: 2em;
         }
 
-        .sup {
-            text-transform: uppercase;
-            font-weight: 600;
-            color: $color-s1;
-            // letter-spacing: 0.05em;
-            margin-bottom: 1.5em;
-            font-family: $font-1;
+        .eyebrow {
+            margin-bottom: 2em;
         }
 
         .title {

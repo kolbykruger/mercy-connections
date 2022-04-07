@@ -54,7 +54,7 @@
         align-items: center;
 
         > li {
-            margin: 0 0 0 1.5vw;
+            margin: 0 0 0 1.25vw;
         }
 
         li:last-child ul {
@@ -96,11 +96,13 @@
             color: $color-1;
         }
 
-        i {
-            @include fs(14px);
-            cursor: pointer;
-            margin: 0 0 0 6px;
-            opacity: 0.4;
+        &:not(.button) {
+            i {
+                @include fs(14px);
+                cursor: pointer;
+                margin: 0 0 0 6px;
+                opacity: 0.4;
+            }
         }
 
         &.button {

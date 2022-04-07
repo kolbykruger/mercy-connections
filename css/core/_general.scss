@@ -37,7 +37,7 @@ html.wf-inactive {
 
 body {
     color: lighten($color-0, 5%);
-    background: $color-grey-1;
+    background: #dfe7d8;//$color-grey-1;
     font-family: $font-0;
     @include fs(16px);
     max-width: 100vw;
@@ -285,6 +285,15 @@ hr::before {
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-s1;
+    letter-spacing: 0.025em;
+    margin-bottom: 1.5em;
+    font-family: $font-1;
 }
 
 ::selection {
