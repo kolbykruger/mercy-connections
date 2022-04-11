@@ -1667,10 +1667,10 @@ body.menu-open .mobile_nav {
   position: relative;
   width: 100%;
   font-family: "Arimo", sans-serif;
-  margin-top: 6vh;
+  margin-top: 8vh;
 }
 .footer .container {
-  padding-top: 6vh;
+  padding-top: 3vh;
   padding-bottom: 3vh;
   background: #d2ddc8;
 }
@@ -1748,10 +1748,9 @@ body.menu-open .mobile_nav {
 }
 .footer .decor {
   position: absolute;
+  left: 0;
   right: 0;
-  bottom: 0;
-  width: 35vw;
-  height: 35vw;
+  bottom: calc(100% - 1px);
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -2796,14 +2795,16 @@ p.simplesearch-results, figure:not(.fig) figcaption.simplesearch-results,
 }
 .carousel .slide .info .background {
   position: absolute;
-  bottom: -10%;
-  left: -10%;
+  bottom: -1.25em;
+  left: -1.25em;
   width: 125%;
   aspect-ratio: 1;
 }
 .carousel .slide .info .background img {
   -o-object-fit: contain;
      object-fit: contain;
+  -o-object-position: bottom left;
+     object-position: bottom left;
   width: 100%;
   height: 100%;
   -webkit-filter: drop-shadow(2px 4px 66px rgba(0, 0, 0, 0.16));
@@ -2814,8 +2815,8 @@ p.simplesearch-results, figure:not(.fig) figcaption.simplesearch-results,
   right: 1em;
 }
 .carousel .slide .info-right .background {
-  left: auto;
-  right: -10%;
+  left: -1.25em;
+  right: -1.25em;
 }
 .carousel .slide .info-color-revert h1,
 .carousel .slide .info-color-revert p,
@@ -2830,9 +2831,15 @@ figure:not(.fig) .carousel .slide .info-color-revert figcaption {
   place-content: center;
 }
 .carousel .slide .info-square .background {
-  width: 145%;
-  top: -5%;
-  bottom: 0;
+  top: -1.25em;
+  width: calc(100% + 2.5em);
+  height: calc(100% + 2.5em);
+}
+.carousel .slide .info-square .background img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left;
+     object-position: left;
 }
 .carousel .slide .info .details {
   position: relative;
@@ -3179,10 +3186,6 @@ table td {
 .statistics {
   margin-bottom: 0;
 }
-.statistics.section-active .statistics-item {
-  -webkit-animation: statistics-enter 0.66s ease-out forwards;
-          animation: statistics-enter 0.66s ease-out forwards;
-}
 .statistics.section-active .statistics-item:nth-of-type(1) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
@@ -3217,45 +3220,69 @@ table td {
 .statistics-item {
   position: relative;
   width: calc(33.333% - 2em);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100%;
+  min-height: 250px;
   color: #002621;
   background: #d2ddc8;
   padding: 2em;
-  margin: 1em;
+  margin: 0 1em 1em;
   text-decoration: none;
-  opacity: 0;
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
 }
-.statistics-item .icon {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  font-size: 2rem;
+@media (max-width: 1600px) {
+  .statistics-item {
+    width: calc(50% - 2em);
+  }
 }
-.statistics-item h2 {
-  margin-bottom: 0.5em;
+.statistics-item .mast,
+.statistics-item .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+@media (max-width: 1600px) {
+  .statistics-item .mast,
+.statistics-item .details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+.statistics-item .mast .icon,
+.statistics-item .mast span,
+.statistics-item .details .icon,
+.statistics-item .details span {
+  display: block;
+  width: 90px;
+  margin-right: 2em;
+}
+.statistics-item .mast .value,
+.statistics-item .mast .label,
+.statistics-item .details .value,
+.statistics-item .details .label {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+.statistics-item .mast {
+  margin-bottom: 0.75em;
+}
+.statistics-item .mast .icon {
+  margin-bottom: 0.45em;
 }
 .statistics-item p.value, .statistics-item figure:not(.fig) figcaption.value, figure:not(.fig) .statistics-item figcaption.value {
   font-family: "Arimo", sans-serif;
   font-weight: 600;
   line-height: 1;
-  margin-bottom: 0.25em;
+  margin-bottom: 0;
 }
 .statistics-item p.label, .statistics-item figure:not(.fig) figcaption.label, figure:not(.fig) .statistics-item figcaption.label {
   line-height: 1.2;
-}
-.statistics-item .details {
-  -webkit-box-flex: 5;
-      -ms-flex: 5;
-          flex: 5;
-  padding: 0 2em;
 }
 .statistics .decor {
   position: absolute;

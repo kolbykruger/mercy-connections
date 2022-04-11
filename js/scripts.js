@@ -165,15 +165,27 @@ $('.stories .container').flickity({
     friction: 0.2,
 })
 
+let groupCells = 3
+statisticsResponsiveChecks()
+window.addEventListener('resize', function () {
+    statisticsResponsiveChecks()
+})
+
+function statisticsResponsiveChecks() {
+    if (window.matchMedia('(max-width: 1600px)').matches) {
+        groupCells = 2
+    }
+}
+
 $('.statistics .group').flickity({
     cellSelector: '.statistics-item',
-    wrapAround: true,
+    wrapAround: false,
     adaptiveHeight: false,
     cellAlign: 'center',
-    groupCells: 3,
+    groupCells: groupCells,
     prevNextButtons: true,
     pageDots: false,
-    imagesLoaded: true,
+    imagesLoaded: false,
     // autoPlay: 5000,
     selectedAttraction: 0.01,
     friction: 0.2,

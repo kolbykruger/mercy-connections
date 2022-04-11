@@ -6,7 +6,7 @@
         .statistics {
 
             &-item {
-                animation: statistics-enter 0.66s ease-out forwards;
+                // animation: statistics-enter 0.66s ease-out forwards;
 
                 @for $i from 1 through 6 {
                     &:nth-of-type(#{$i}) {
@@ -32,18 +32,20 @@
     &-item {
         position: relative;
         width: calc(33.333% - 2em);
-        display: flex;
-        align-items: center;
-        height: 100%;
+        min-height: 250px;
         color: $color-0;
         background: $color-grey-2;
         padding: 2em;
-        margin: 1em;
+        margin: 0 1em 1em;
         text-decoration: none;
 
         // Animations
-        opacity: 0;
-        transform: scale(0.6);
+        // opacity: 0;
+        // transform: scale(0.6);
+
+        @media (max-width: 1600px) {
+            width: calc(50% - 2em);
+        }
 
         // &::after {
         //     content: '';
@@ -57,13 +59,36 @@
         //     z-index: -1;
         // }
 
-        .icon {
-            flex: 3;
-            font-size: 2rem;
+        .mast,
+        .details {
+            display: flex;
+            align-items: flex-end;
+
+            @media (max-width: 1600px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icon,
+            span {
+                display: block;
+                width: 90px;
+                margin-right: 2em;
+
+            }
+
+            .value,
+            .label {
+                flex: 5;
+            }
         }
 
-        h2 {
-            margin-bottom: 0.5em;
+        .mast {
+            margin-bottom: 0.75em;
+
+            .icon {
+                margin-bottom: 0.45em;
+            }
         }
 
         p.value {
@@ -71,16 +96,11 @@
             font-weight: 600;
             @extend h3;
             line-height: 1;
-            margin-bottom: 0.25em;
+            margin-bottom: 0;
         }
 
         p.label {
             line-height: 1.2;
-        }
-
-        .details {
-            flex: 5;
-            padding: 0 2em;
         }
     }
 
