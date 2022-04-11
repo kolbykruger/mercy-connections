@@ -39,6 +39,8 @@ $button-background: $color-1;
     display: inline-flex;
     align-items: center;
     margin: 0;
+    margin-top: 1em;
+    margin-right: 1em;
     padding: 1em 1.375em;
     background: $button-background;
     color: $button-color;
@@ -52,7 +54,7 @@ $button-background: $color-1;
     cursor: pointer;
 
     + .button {
-        margin: 0 0 0 1em;
+        margin: 1em 1em 0 0;
     }
 
     &:hover,
@@ -78,21 +80,47 @@ $button-background: $color-1;
     // Unique styles
     &-primary-2 {
         background: $color-2;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-2, 8%);
+        }
     }
     &-primary-3 {
+        color: $color-0;
         background: $color-3;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-3, 8%);
+        }
     }
     &-secondary-1 {
         background: $color-s1;
         color: #fff;
+
+        &:hover,
+        &:focus {
+            background: lighten($color-s1, 8%);
+        }
     }
     &-secondary-2 {
         color: $color-0;
         background: $color-s2;
+
+        &:hover,
+        &:focus {
+            background: darken($color-s2, 8%);
+        }
     }
     &-secondary-3 {
         color: $color-0;
         background: $color-s3;
+
+        &:hover,
+        &:focus {
+            background: darken($color-s3, 8%);
+        }
     }
 
     &-size-small {
@@ -109,6 +137,14 @@ $button-background: $color-1;
         padding: 0;
         box-shadow: none;
         color: $color-1;
+        border-radius: 0;
+
+        &:hover,
+        &:focus {
+            background: none;
+            color: $color-0;
+            box-shadow: 0 2px 0 $color-1;
+        }
     }
 
     &[disabled] {

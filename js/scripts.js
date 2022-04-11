@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Section Scroll Animations (requires scrollmagic)
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller()
-    var elems = document.querySelectorAll('section')
+    var elems = document.querySelectorAll('section, footer')
 
     for (var i = 0; i < elems.length; i++) {
         new ScrollMagic.Scene({

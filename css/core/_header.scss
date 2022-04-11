@@ -9,10 +9,10 @@
         padding: 3em 270px 2em;
 
         @media (max-width: 1920px) {
-            padding: 5em 120px 2em;
+            padding: 3em 120px 2em;
         }
         @media (max-width: 1500px) {
-            padding: 5vh 60px;
+            padding: 3vh 60px 2vh;
         }
         @media (max-width: 1200px) {
             padding: 2vh 1.5em;
@@ -26,8 +26,11 @@
     .logo {
         width: 100%;
         max-width: 380px;
-        max-width: minmax(240px, 300px);
         margin-bottom: -3px;
+
+        @media (max-width: 1200px) {
+            max-width: 300px;
+        }
 
         a {
             display: block;
@@ -73,7 +76,7 @@
         top: 1em;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
         .group {
             align-items: center;
         }

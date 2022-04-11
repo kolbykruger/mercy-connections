@@ -1,5 +1,21 @@
 .classes {
 
+    &.section-active {
+
+        .classes {
+
+            &-item {
+                animation: classes-enter 0.66s ease-out forwards;
+
+                @for $i from 1 through 6 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: $i * 0.2s;
+                    }
+                }
+            }
+        }
+    }
+
     .container {
         position: relative;
         padding-top: 6vh;
@@ -31,10 +47,21 @@
         background: $color-grey-2;
         grid-column: span 2;
 
+        // Animations
+        opacity: 0;
+        transform: translateY(3em);
+
         a {
             display: block;
             text-decoration: none;
             color: inherit;
+
+            &:hover,
+            &:focus {
+                .image img {
+                    transform: scale(1.08);
+                }
+            }
         }
 
         h3 {
@@ -48,6 +75,14 @@
 
         .info {
             padding: 2em;
+        }
+
+        .image {
+            overflow: hidden;
+
+            img {
+                transition: transform 0.33s ease;
+            }
         }
 
         .meta {
@@ -83,5 +118,16 @@
         p {
             font-weight: 600;
         }
+    }
+}
+
+@keyframes classes-enter {
+    from {
+        opacity: 0;
+        transform: translateY(3em);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

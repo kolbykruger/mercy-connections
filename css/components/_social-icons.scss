@@ -17,7 +17,9 @@
         height: 2em;
         padding: 0.25em;
         margin: 0.25em;
-        color: #fff;
+        color: $color-1;
+        background: $color-grey-1;
+        border-radius: 50%;
         transition: 150ms ease;
         text-decoration: none;
 

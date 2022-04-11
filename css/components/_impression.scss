@@ -58,6 +58,8 @@
     }
 
     &-details  {
+        display: flex;
+        align-items: center;
         padding: 5em;
         max-width: 42em;
 

@@ -1,6 +1,22 @@
 .statistics {
     margin-bottom: 0;
 
+    &.section-active {
+
+        .statistics {
+
+            &-item {
+                animation: statistics-enter 0.66s ease-out forwards;
+
+                @for $i from 1 through 6 {
+                    &:nth-of-type(#{$i}) {
+                        animation-delay: $i * 0.2s;
+                    }
+                }
+            }
+        }
+    }
+
     .container {
         padding-top: 3vh;
         padding-bottom: 3vh;
@@ -24,6 +40,10 @@
         padding: 2em;
         margin: 1em;
         text-decoration: none;
+
+        // Animations
+        opacity: 0;
+        transform: scale(0.6);
 
         // &::after {
         //     content: '';
@@ -136,5 +156,16 @@
                 opacity: 1;
             }
         }
+    }
+}
+
+@keyframes statistics-enter {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }

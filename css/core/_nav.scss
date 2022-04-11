@@ -11,12 +11,17 @@
     justify-content: space-between;
     margin-left: 2.5em;
 
+    @media (max-width: 2000px) {
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
     ul {
         overflow: visible;
         padding: 0;
 
         ul {
-            border-radius: 0.125em;
+            border-radius: 0.375em;
             padding: 0;
             left: 0;
             opacity: 0;
@@ -42,7 +47,7 @@
                 &:not(.button):hover,
                 &:not(.button):focus {
                     color: $color-2;
-                    background: $color-grey-1;
+                    background: rgba($color-grey-1, 0.25);
                 }
             }
         }
@@ -109,16 +114,30 @@
             display: flex;
             align-items: center;
         }
-    }
 
-    .utility {
-
-        > li {
-            margin: 0 0 0 0.5em;
+        @media (max-width: 1200px) {
+            @include fs(16px);
         }
     }
 
-    @media (max-width: 900px) {
+    .utility {
+        @media (max-width: 2000px) {
+            order: -1;
+            margin-bottom: 1em;
+        }
+
+        > li {
+            margin: 0 0 0 0.5em;
+
+            a.button {
+                @extend .button-size-small;
+                margin-right: 0;
+                margin-top: 0;
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
         display: none;
     }
 }
