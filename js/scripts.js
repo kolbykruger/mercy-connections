@@ -1,7 +1,61 @@
+//Impression
+document.addEventListener('DOMContentLoaded', function () {
+    var controller = new ScrollMagic.Controller()
+
+    var tween1 = gsap.to('.impression-images-layer-vector', {
+        rotate: 90,
+        yPercent: -8,
+    })
+    // var tween2 = gsap.to('.impression-images-layer-2', {
+    //     yPercent: 16,
+    // })
+
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#impression',
+        duration: '200%',
+        triggerHook: '1',
+    })
+        .setTween(tween1)
+        .addTo(controller)
+    // var scene2 = new ScrollMagic.Scene({
+    //     triggerElement: '#impression',
+    //     duration: '200%',
+    // })
+    //     .setTween(tween2)
+    //     .addTo(controller)
+})
+
+//Annual Event
+document.addEventListener('DOMContentLoaded', function () {
+    var controller = new ScrollMagic.Controller()
+
+    var tween1 = gsap.to('.annual-event-images-layer-vector', {
+        rotate: -45,
+        scale: 1.1,
+    })
+    // var tween2 = gsap.to('.impression-images-layer-2', {
+    //     yPercent: 16,
+    // })
+
+    var scene1 = new ScrollMagic.Scene({
+        triggerElement: '#annual-event',
+        duration: '200%',
+        triggerHook: '1',
+    })
+        .setTween(tween1)
+        .addTo(controller)
+    // var scene2 = new ScrollMagic.Scene({
+    //     triggerElement: '#impression',
+    //     duration: '200%',
+    // })
+    //     .setTween(tween2)
+    //     .addTo(controller)
+})
+
 //Section Scroll Animations (requires scrollmagic)
 document.addEventListener('DOMContentLoaded', function () {
     var controller = new ScrollMagic.Controller()
-    var elems = document.querySelectorAll('section')
+    var elems = document.querySelectorAll('section, footer')
 
     for (var i = 0; i < elems.length; i++) {
         new ScrollMagic.Scene({
@@ -75,40 +129,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
-//Flickity Carousel
-$('.carousel .group .images').flickity({
+$('.carousel .group').flickity({
     cellSelector: '.slide',
     wrapAround: true,
     adaptiveHeight: false,
     cellAlign: 'center',
     prevNextButtons: false,
-    pageDots: false,
-    imagesLoaded: true,
-    autoPlay: false,
-    selectedAttraction: 0.01,
-    friction: 0.2,
-    asNavFor: '.carousel .group .details',
-    contain: true,
-    draggable: false,
-})
-
-let isDraggable = window.matchMedia('(max-width: 968px)').matches
-window.addEventListener('resize', function () {
-    isDraggable = window.matchMedia('(max-width: 968px)').matches
-})
-
-$('.carousel .group .details').flickity({
-    cellSelector: '.slide',
-    wrapAround: true,
-    adaptiveHeight: false,
-    cellAlign: 'center',
-    prevNextButtons: true,
     pageDots: true,
     imagesLoaded: true,
-    autoPlay: false,
     selectedAttraction: 0.01,
     friction: 0.2,
-    draggable: isDraggable,
 })
 
 $('.slideshow .container').flickity({
@@ -130,20 +160,33 @@ $('.stories .container').flickity({
     prevNextButtons: true,
     pageDots: true,
     imagesLoaded: true,
-    autoPlay: 5000,
+    autoPlay: false,
     selectedAttraction: 0.01,
     friction: 0.2,
 })
+
+let groupCells = 1
+statisticsResponsiveChecks()
+window.addEventListener('resize', function () {
+    statisticsResponsiveChecks()
+})
+
+function statisticsResponsiveChecks() {
+    if (window.matchMedia('(max-width: 1600px)').matches) {
+        groupCells = 2
+    }
+}
 
 $('.statistics .group').flickity({
     cellSelector: '.statistics-item',
     wrapAround: true,
     adaptiveHeight: false,
     cellAlign: 'center',
+    groupCells: groupCells,
     prevNextButtons: true,
     pageDots: false,
-    imagesLoaded: true,
-    autoPlay: 5000,
+    imagesLoaded: false,
+    // autoPlay: 5000,
     selectedAttraction: 0.01,
     friction: 0.2,
 })

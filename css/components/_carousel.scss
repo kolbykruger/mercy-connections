@@ -4,12 +4,11 @@
 
     .container {
         padding-top: 0;
-        // padding-bottom: 0;
     }
 
     .group {
         position: relative;
-        background: $color-grey-2;
+        //background: $color-grey-2;
     }
 
     .details,
@@ -18,78 +17,91 @@
         flex: 1;
     }
 
-    .details {
-        border-radius: 0.25em 0 0 0.25em;
-        overflow: hidden;
-
-        .slide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            transform: scale(0.8);
-            transition: transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 1s ease-out;
-
-            &.is-selected {
-                transform: scale(1);
-            }
-        }
-    }
-
-    .images {
-        order: 1;
-        border-radius: 0 0.25em 0.25em 0;
-        overflow: hidden;
-
-        .slide {
-            aspect-ratio: 1;
-
-            &.is-selected {
-                img {
-                    transform: scale(1);
-                }
-            }
-        }
-    }
-
     .slide {
+        position: relative;
         width: 100%;
-        opacity: 0;
-        transition: opacity 1s ease-out;
+        margin: 0 1em;
         overflow: hidden;
 
         &.is-selected {
-            opacity: 1;
-            transition: opacity 0s ease;
-        }
 
-        .decor {
-            position: absolute;
-            top: -5%;
-            left: -5%;
-            width: 110%;
-            height: 110%;
-            mix-blend-mode: soft-light;
-            opacity: 0.5;
-            pointer-events: none;
-            user-select: none;
-            z-index: -1;
-
-            img {
+            .info {
+                opacity: 1;
                 transform: scale(1);
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
             }
         }
 
         .info {
-            position: relative;
-            max-width: 42em;
-            padding: 2em;
+            position: absolute;
+            left: 1em;
+            bottom: 1em;
+            width: 50%;
+            max-width: 46em;
+            padding: 3em;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: 0.33s 0.1s ease;
+
+            .background {
+                position: absolute;
+                bottom: -1.25em;
+                left: -1.25em;
+                width: 125%;
+                aspect-ratio: 1;
+
+                img {
+                    object-fit: contain;
+                    object-position: bottom left;
+                    width: 100%;
+                    height: 100%;
+                    filter: drop-shadow(2px 4px 66px rgba(0,0,0,0.16));
+                }
+            }
+
+            &-right {
+                left: auto;
+                right: 1em;
+
+                .background {
+                    left: -1.25em;
+                    right: -1.25em;
+                }
+            }
+
+            &-color-revert {
+                h1,
+                p {
+                    color: #fff;
+                }
+            }
+
+            &-square {
+                top: 1em;
+                display: grid;
+                place-content: center;
+
+                &.info-right {
+                }
+
+                .background {
+                    top: -1.25em;
+                    width: calc(100% + 2.5em);
+                    height: calc(100% + 2.5em);
+
+                    img {
+                        object-fit: cover;
+                        object-position: left;
+                    }
+                }
+            }
+
+            .details {
+                position: relative;
+                z-index: 2;
+            }
 
             .title {
-                max-width: 90%;
+                max-width: 80%;
             }
 
             .description {
@@ -110,19 +122,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(0.8);
-            transition: transform 0.45s cubic-bezier(0.075, 0.82, 0.165, 1);
-        }
-
-        &:nth-of-type(1) {
-            background: $color-1;
-            color: #fff;
-        }
-        &:nth-of-type(2) {
-            background: $color-2;
-        }
-        &:nth-of-type(3) {
-            background: $color-3;
+            aspect-ratio: 2;
+            // filter: grayscale(1);
         }
     }
 

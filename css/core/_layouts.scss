@@ -1,5 +1,16 @@
 .layout {
     width: 100%;
+    padding: 0 270px;
+
+    @media (max-width: 1920px) {
+        padding: 0 120px;
+    }
+    @media (max-width: 1500px) {
+        padding: 0 60px;
+    }
+    @media (max-width: 1200px) {
+        padding: 0 1.5em;
+    }
 
     &.layout_sidebar,
     &.layout_two_columns,
@@ -10,12 +21,12 @@
 
     &.layout_sidebar {
         justify-content: space-between;
-        max-width: $container-width;
+        // max-width: $container-width;
         margin: 0 auto;
 
         .col_1 {
             flex: 1;
-            max-width: 800px;
+            max-width: 62em;
         }
 
         .col_2 {
@@ -43,9 +54,9 @@
     }
 
     &.layout_two_columns {
-        max-width: $container-width;
+        // max-width: $container-width;
         margin: 0 auto;
-        
+
         @media (max-width: 768px) {
             &.layout_two_columns_right_first {
                 order: -1;
@@ -89,6 +100,21 @@
 
     & + & {
         margin-top: 3em;
+    }
+
+    .container {
+        padding: 0;
+
+
+        @media (max-width: 1920px) {
+            padding: 0;
+        }
+        @media (max-width: 1500px) {
+            padding: 0;
+        }
+        @media (max-width: 1200px) {
+            padding: 0;
+        }
     }
 
 }
