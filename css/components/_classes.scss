@@ -44,7 +44,7 @@
     }
 
     &-item {
-        background: $color-grey-2;
+        background: #fff;
         grid-column: span 2;
 
         // Animations
@@ -61,16 +61,22 @@
                 .image img {
                     transform: scale(1.08);
                 }
+                h3 {
+                    color: $color-s1;
+                }
             }
         }
 
         h3 {
-            @extend h4;
-            margin-bottom: 0.5em;
+            @extend h5;
+            margin-bottom: 0.75em;
+            transition: color 0.33s ease;
         }
+
         p {
             // display: none;
             line-height: 1.2;
+            font-size: 1.125rem;
         }
 
         .info {

@@ -160,12 +160,12 @@ $('.stories .container').flickity({
     prevNextButtons: true,
     pageDots: true,
     imagesLoaded: true,
-    autoPlay: 5000,
+    autoPlay: false,
     selectedAttraction: 0.01,
     friction: 0.2,
 })
 
-let groupCells = 3
+let groupCells = 1
 statisticsResponsiveChecks()
 window.addEventListener('resize', function () {
     statisticsResponsiveChecks()
@@ -179,7 +179,7 @@ function statisticsResponsiveChecks() {
 
 $('.statistics .group').flickity({
     cellSelector: '.statistics-item',
-    wrapAround: false,
+    wrapAround: true,
     adaptiveHeight: false,
     cellAlign: 'center',
     groupCells: groupCells,

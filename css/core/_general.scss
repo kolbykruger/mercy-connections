@@ -61,37 +61,45 @@ a {
 }
 
 h1 {
-    @include fluid('font-size', 2.5rem, 5rem);
+    @include fluid('font-size', 2.5rem, 4.25rem);
     //@include fluid('line-height', 1em, 1.2em);
-    line-height: 1.2;
-    font-weight: 600;
+    line-height: 1;
+    font-weight: 700;
 }
 
 h2 {
-    @include fluid('font-size', 1.75rem, 3.5rem);
+    @include fluid('font-size', 1.75rem, 3.25rem);
     //@include fluid('line-height', 1em, 1.2em);
-    line-height: 1.2;
+    line-height: 1.1;
     font-weight: 600;
 }
 
 h3 {
-    @include fluid('font-size', 1.25rem, 2.75rem);
+    @include fluid('font-size', 1.25rem, 2.5rem);
     //@include fluid('line-height', 1em, 1.2em);
     line-height: 1.2;
     font-weight: 600;
 }
 
 h4 {
-    @include fluid('font-size', 1.25rem, 1.75rem);
+    @include fluid('font-size', 1.25rem, 2rem);
     //@include fluid('line-height', 1em, 1.2em);
     line-height: 1.2;
+    font-weight: 600;
+}
+
+h5 {
+    @include fluid('font-size', 1.125rem, 1.5rem);
+    //@include fluid('line-height', 1em, 1.2em);
+    line-height: 1.1;
     font-weight: 600;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     font-family: $font-1;
     margin: 0 0 0.25em;
     width: 100%;
@@ -253,17 +261,18 @@ section {
 }
 
 hr {
-    margin: 1em auto;
+    margin: 0.5em auto 1.5em;
     border: none;
     text-align: center;
     font-size: 1.75rem;
+    border: 1px solid $color-grey-2;
 }
 
-hr::before {
-    content: '.....';
-    letter-spacing: 0.6em;
-    margin: 0 0 0 0.6em;
-}
+// hr::before {
+//     content: '.....';
+//     letter-spacing: 0.6em;
+//     margin: 0 0 0 0.6em;
+// }
 
 .reset {
     -moz-appearance: none;
